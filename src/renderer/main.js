@@ -5,6 +5,8 @@ import Router from 'vue-router'
 
 import App from './App'
 import router from './router'
+import store from './store'
+import Vuex from 'vuex'
 import { usePermission } from './permission'
 // 引用element
 import ElementUI from 'element-ui'
@@ -31,6 +33,7 @@ if (!process.env.IS_WEB) {
 }
 Vue.use(PiniaVuePlugin) // 确保pinia在最先挂载
 Vue.use(Router)
+Vue.use(Vuex)
 // 创建 i18n
 Vue.use(VueI18n) // 新版本必须要这个，不知道为什么
 
@@ -49,6 +52,7 @@ Vue.config.productionTip = false
 new Vue({
   components: { App },
   router,
+  store,
   pinia,
   i18n,
   template: '<App/>',

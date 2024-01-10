@@ -1,9 +1,8 @@
 <template>
   <scroll-bar>
-    <el-menu mode="vertical" :show-timeout="200" :default-active="$route.path" :collapse="isCollapse">
+    <el-menu mode="vertical" :show-timeout="200" :default-active="$route.path" :collapse="isCollapse" class="mySidebar">
       <Logo :collapse="isCollapse" />
-      <sidebar-item v-for="route in routes_list" :key="route.name" :item="route" :base-path="route.path"
-        :collapse="isCollapse"></sidebar-item>
+      <sidebar-item v-for="route in routes_list" :key="route.name" :item="route" :base-path="route.path" :collapse="isCollapse"></sidebar-item>
     </el-menu>
   </scroll-bar>
 </template>
@@ -47,5 +46,9 @@ const isCollapse = computed(() => !sidebarStatus.opened)
   transition: padding 0.28s;
   overflow: hidden;
   width: 180px;
+}
+
+.mySidebar {
+  height: 800px;
 }
 </style>

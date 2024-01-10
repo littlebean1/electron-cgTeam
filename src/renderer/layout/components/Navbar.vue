@@ -2,11 +2,13 @@
   <el-menu :class="'navbar-header-fixed' + (isMac ? ' dragTitle' : '')" mode="horizontal">
     <div class="top-right">
       <div class="hb-bd">
-        <hamburger class="hamburger-container" @toggle-click="toggleSideBar" :isActive="sidebarComp.opened"></hamburger>
-        <breadcrumb></breadcrumb>
+            <hamburger class="hamburger-container" @toggle-click="toggleSideBar" :isActive="sidebarComp.opened"></hamburger>
+            <breadcrumb></breadcrumb>
       </div>
-
       <div class="top-select">
+        <div class="team-name" >
+            团队：{{ teamName }}
+        </div>
         <div class="go-index">{{ time }}</div>
         <div class="select-right">
           <el-dropdown trigger="click">
@@ -49,11 +51,14 @@ import Hamburger from "@/components/Hamburger";
 import userImage from "@/assets/user.png"
 import { Message } from "element-ui"
 import { useRouter } from "@/hooks/use-router";
+import {mapGetters} from "vuex";
+import store from "../../store";
+import axios from "axios";
+
 
 defineComponent({
   name: 'Navbar'
 })
-
 const time = ref("")
 const isMac = process.platform === "darwin"
 let timer = null
@@ -76,6 +81,9 @@ const toggleSideBar = () => {
 const { logOut, name } = useUserStore()
 const router = useRouter()
 const userName = computed(() => name)
+const teamName =  (function() {
+    return "新视觉团队"
+})()
 const logout = () => {
   logOut().then(() => {
     Message({
@@ -135,11 +143,13 @@ const logout = () => {
         border-radius: 50%;
       }
     }
-
+    
     .top-select {
       display: flex;
       align-items: center;
-
+      .team-name {
+        margin-right: 600px;
+      }
       .go-index {
         color: #333333;
         font-weight: 400;

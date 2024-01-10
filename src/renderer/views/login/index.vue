@@ -35,8 +35,11 @@
 <script setup>
 import { isvalidUsername } from "@/utils/validate";
 import { useUserStore } from "@/store/user";
+import store from "../../store"
 import { ref } from "vue"
 import { useRouter } from "@/hooks/use-router";
+import {mapGetters} from "vuex";
+
 
 const { login } = useUserStore()
 
@@ -56,6 +59,7 @@ const validatePass = (rule, value, callback) => {
 };
 
 const loginForm = ref({
+  _id: "657fdcb73c510000b7004d36",
   username: "",
   password: "",
 });
@@ -85,6 +89,8 @@ const handleLogin = () => {
       loading.value = true;
       login(loginForm.value).then(() => {
         loading.value = false;
+        console.log("loginForm： ", loginForm.value)
+        store.commit("setCurrentUser", loginForm.value)
         router.push({ path: "/" }).catch((err) => { });
       }).catch(() => {
         loading.value = false;

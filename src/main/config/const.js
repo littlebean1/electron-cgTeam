@@ -5,3 +5,4 @@ export const hotPublishUrl = ""
 export const hotPublishConfigName = "update-config"
 export const openDevTools = false
 export const DisableF12 = true
+export const RequestBaseUrl = "http://localhost:3000"

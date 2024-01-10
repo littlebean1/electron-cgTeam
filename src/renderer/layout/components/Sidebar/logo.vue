@@ -2,12 +2,14 @@
   <div class="sidebar-logo-container" :class="{'collapse':collapse}">
     <transition name="sidebarLogoFade">
       <router-link v-if="collapse" key="collapse" class="sidebar-logo-link" to="/">
-        <svg-icon icon-class="logo" class-name="sidebar-logo"></svg-icon>
-        <div class="sidebar-title">{{ title }}</div>
+        <!-- <svg-icon icon-class="logo" class-name="sidebar-logo"></svg-icon> -->
+        <img src = "../../../assets/cgyun_logo.png" style="width: 50px;height: 50px;">
+        <!-- <div class="sidebar-title">{{ title }}</div> -->
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
-        <svg-icon icon-class="logo" class-name="sidebar-logo"></svg-icon>
-        <div class="sidebar-title">{{ title }}</div>
+        <!-- <svg-icon icon-class="logo" class-name="sidebar-logo"></svg-icon> -->
+        <img src = "../../../assets/cgyun_logo.png" style="width: 50px;height: 50px;">
+        <!-- <div class="sidebar-title">{{ title }}</div> -->
       </router-link>
     </transition>
   </div>
@@ -24,7 +26,7 @@ export default {
   },
   data() {
     return {
-      title: "logo名称",
+      title: "cgyun",
     };
   }
 };

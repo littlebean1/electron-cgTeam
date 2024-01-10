@@ -27,30 +27,125 @@ export default [
   {
     path: '/form',
     component: Layout,
-    meta: { title: '表单', icon: 'form', roles: ['admin', 'edit'] },
+    meta: { title: '我的项目', icon: 'form', roles: ['admin', 'edit'] },
     children: [
       {
         path: 'index',
         name: 'Form',
         component: () => import('@/views/form/index'),
-        meta: { title: '表单', icon: 'form' }
+        meta: { title: '我的项目', icon: 'form' }
       }
     ]
   },
   {
-    path: '/table',
+    path: '/myAssets',
     component: Layout,
     meta: { roles: ['admin', 'edit'] },
     children: [
       {
         path: 'index',
-        name: '表格',
-        component: () => import('@/views/table/index'),
-        meta: { title: '表格', icon: 'table' }
+        name: 'MyAssets',
+        component: () => import('@/views/myAssets/index'),
+        meta: { title: '我的资产', icon: 'table' }
       }
     ]
-  },
-  {
+  },{
+    path: '/myShots',
+    component: Layout,
+    meta: { roles: ['admin', 'edit'] },
+    children: [
+      {
+        path: 'index',
+        name: 'MyShots',
+        component: () => import('@/views/myShots/index'),
+        meta: { title: '我的镜头', icon: 'table' }
+      }
+    ]
+  },{
+    path: '/mySessions',
+    component: Layout,
+    meta: { roles: ['admin', 'edit'] },
+    children: [
+      {
+        path: 'index',
+        name: 'MySessions',
+        component: () => import('@/views/mySessions/index'),
+        meta: { title: '我的场次', icon: 'table' }
+      }
+    ]
+  },{
+    path: '/mySequences',
+    component: Layout,
+    meta: { roles: ['admin', 'edit'] },
+    children: [
+      {
+        path: 'index',
+        name: 'MySequences',
+        component: () => import('@/views/mySequences/index'),
+        meta: { title: '我的序列', icon: 'table' }
+      }
+    ]
+  },{
+    path: '/myDesigns',
+    component: Layout,
+    meta: { roles: ['admin', 'edit'] },
+    children: [
+      {
+        path: 'index',
+        name: 'MyDesigns',
+        component: () => import('@/views/myDesigns/index'),
+        meta: { title: '我的设计', icon: 'table' }
+      }
+    ]
+  },{
+    path: '/myReviews',
+    component: Layout,
+    meta: { roles: ['admin', 'edit'] },
+    children: [
+      {
+        path: 'index',
+        name: 'MyReviews',
+        component: () => import('@/views/myReviews/index'),
+        meta: { title: '我的审验', icon: 'table' }
+      }
+    ]
+  },{
+    path: '/myRenders',
+    component: Layout,
+    meta: { roles: ['admin', 'edit'] },
+    children: [
+      {
+        path: 'index',
+        name: 'MyRenders',
+        component: () => import('@/views/myRenders/index'),
+        meta: { title: '我的渲染', icon: 'table' }
+      }
+    ]
+  },{
+    path: '/myMonitors',
+    component: Layout,
+    meta: { roles: ['admin', 'edit'] },
+    children: [
+      {
+        path: 'index',
+        name: 'MyMonitors',
+        component: () => import('@/views/myMonitors/index'),
+        meta: { title: '我的监控', icon: 'monitor' }
+      }
+    ]
+  },{
+    path: '/myUsers',
+    component: Layout,
+    meta: { roles: ['admin', 'edit'] },
+    children: [
+      {
+        path: 'index',
+        name: 'MyUsers',
+        component: () => import('@/views/myUsers/index'),
+        meta: { title: '我的成员', icon: 'table' }
+      }
+    ]
+  },{
     path: '/permission',
     component: Layout,
     meta: { roles: ['admin'] },
